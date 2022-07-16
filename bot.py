@@ -8,13 +8,14 @@ TOKEN_KEY = os.getenv('TOKEN_KEY')
 
 bot = telebot.TeleBot(TOKEN_KEY)
 
-@bot.message_handler(commands=['start','help'])
+@bot.message_handler(commands=['/start','/help'])
 def start(message):
     bot.send_message(message.chat.id, '''Welcome to Qrcode Hub !! 
                                         \nLet start to generate wifi Qrcode 
                                         \nHow to generate wifi Qrcode ? 
                                         \n  - <your_wifi>:<your_wifi_password>
                                         \n  - Example: qrcode wifi:@1234567'
+                                        
                                         ''')
 
 @bot.message_handler()
